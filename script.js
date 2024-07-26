@@ -11,17 +11,13 @@ let answer = document.getElementById("answer");
 
 let randomQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
 let pickedQuestion = quizQuestions[randomQuestionIndex];
-
-let shuffledChoices = _.shuffle(pickedQuestion.choices);
-
-let correctAnswer = pickedQuestion.choices[pickedQuestion.answer];
-let shuffledAnswerIndex = shuffledChoices.indexOf(correctAnswer);
+let shuffledChoices = _.shuffle(pickedQuestion.choices); // lodash library JS.
 
 question.textContent = pickedQuestion.question;
 answer.textContent = pickedQuestion.choices[pickedQuestion.answer];
 
-optionsContainer.forEach((choices) => {
-  choices.textContent = shuffledAnswerIndex;
+choices.forEach((button, index) => {
+  button.textContent = shuffledChoices[index];
 });
 
 /*
