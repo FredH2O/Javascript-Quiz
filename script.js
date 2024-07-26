@@ -1,9 +1,11 @@
+//import _ from "lodash";
 import quizQuestions from "./quizQuestions.js";
 
 let timer = document.getElementById("timer");
 let question = document.getElementById("question");
 let optionsContainer = document.getElementById("options-container");
 let choices = document.querySelectorAll(".option");
+let answer = document.getElementById("answer");
 
 // generate random question and answers
 
@@ -15,9 +17,18 @@ let shuffledChoices = _.shuffle(pickedQuestion.choices);
 let correctAnswer = pickedQuestion.choices[pickedQuestion.answer];
 let shuffledAnswerIndex = shuffledChoices.indexOf(correctAnswer);
 
+question.textContent = pickedQuestion.question;
+answer.textContent = pickedQuestion.choices[pickedQuestion.answer];
+
+optionsContainer.forEach((choices) => {
+  choices.textContent = shuffledAnswerIndex;
+});
+
+/*
 console.log("Question:", pickedQuestion.question);
 console.log("Shuffled Choices:", shuffledChoices);
 console.log("Correct Answer Index (in shuffled choices):", shuffledAnswerIndex);
+*/
 
 /* Night mode & Day mode */
 let darkModeBtn = document.getElementById("dark-mode-btn");
