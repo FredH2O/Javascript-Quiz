@@ -1,0 +1,15 @@
+{
+  "name": "javascript-quiz",
+  "version": "1.0.0",
+  "description": "An interactive quiz application built with JavaScript, HTML, and CSS. Features include a user-friendly interface, multiple question types, real-time scoring, and an optional timer.",
+  "main": "quizQuestions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
