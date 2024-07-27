@@ -6,25 +6,52 @@ let question = document.getElementById("question");
 let optionsContainer = document.getElementById("options-container");
 let choices = document.querySelectorAll(".option");
 let answer = document.getElementById("answer");
+let nextBtn = document.getElementById("next-button");
+let time = new Date();
+let hour = time.getHours();
+
+console.log(hour);
 
 // generate random question and answers
 
-let randomQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-let pickedQuestion = quizQuestions[randomQuestionIndex];
-let shuffledChoices = _.shuffle(pickedQuestion.choices); // lodash library JS.
+function javascriptQuizLogic() {
+  let randomQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
+  let pickedQuestion = quizQuestions[randomQuestionIndex];
+  let shuffledChoices = _.shuffle(pickedQuestion.choices); // lodash library JS.
 
-question.textContent = pickedQuestion.question;
-answer.textContent = pickedQuestion.choices[pickedQuestion.answer];
+  question.textContent = pickedQuestion.question;
+  answer.textContent = pickedQuestion.choices[pickedQuestion.answer];
 
-choices.forEach((button, index) => {
-  button.textContent = shuffledChoices[index];
-});
+  choices.forEach((button, index) => {
+    button.textContent = shuffledChoices[index];
+  });
+  checkAnswer();
+  nextButton();
+}
 
-/*
-console.log("Question:", pickedQuestion.question);
-console.log("Shuffled Choices:", shuffledChoices);
-console.log("Correct Answer Index (in shuffled choices):", shuffledAnswerIndex);
-*/
+// check answer
+
+function checkAnswer() {
+  choices.forEach((choice) => {
+    choice.addEventListener("click", function () {
+      if (choice.textContent == answer.textContent) {
+        console.log("Correct!");
+      } else {
+        console.log("Wrong!");
+      }
+    });
+  });
+}
+
+// next question
+
+function nextButton() {
+  nextBtn.addEventListener("click", () => {
+    javascriptQuizLogic();
+  });
+}
+
+javascriptQuizLogic();
 
 /* Night mode & Day mode */
 let darkModeBtn = document.getElementById("dark-mode-btn");
