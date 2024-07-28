@@ -15,6 +15,7 @@ const hour = time.getHours();
 let darkModeBtn = document.getElementById("dark-mode-btn");
 let darkMode = false;
 let questionsRemainingArray = [];
+let questionNumber = document.getElementById("questionNumber");
 
 function startQuiz() {
   score = 0;
@@ -32,6 +33,7 @@ function questionsLeft() {
   for (let x = 0; x < quizQuestions.length; x++) {
     questionsRemainingArray.push(x);
   }
+
   console.log(questionsRemainingArray);
 }
 
@@ -53,6 +55,7 @@ function javascriptQuizLogic() {
 
   question.textContent = pickedQuestion.question;
   answer.textContent = pickedQuestion.choices[pickedQuestion.answer];
+  questionNumber.textContent = questionChosen;
 
   choices.forEach((button, index) => {
     button.textContent = shuffledChoices[index];
