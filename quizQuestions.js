@@ -563,6 +563,18 @@ const quizQuestions = [
     ],
     answer: 0,
   },
+  {
+    question: "What is the purpose of the `with` statement in JavaScript?",
+    choices: [
+      "To extend the scope chain for a block of code",
+      "To declare a new variable",
+      "To create a new object",
+      "To iterate over an array",
+    ],
+    answer: 0,
+  },
 ];
+
+console.log(quizQuestions.length);
 
 export default quizQuestions;
