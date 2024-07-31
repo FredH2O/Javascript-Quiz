@@ -325,7 +325,7 @@ const quizQuestions = [
   {
     question:
       "What will the following code output: console.log(5 + '5' - '5');?",
-    choices: ["10", "55", "5", "NaN"],
+    choices: ["50", "10", "5", "NaN"],
     answer: 0,
   },
   {
@@ -497,7 +497,7 @@ const quizQuestions = [
   },
   {
     question: "What will the following code output: console.log('5' + 5 - 5);?",
-    choices: ["55", "10", "5", "NaN"],
+    choices: ["50", "10", "5", "NaN"],
     answer: 0,
   },
   {
@@ -575,6 +575,6 @@ const quizQuestions = [
   },
 ];
 
-console.log(quizQuestions.length);
+// console.log(quizQuestions.length);
 
 export default quizQuestions;

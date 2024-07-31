@@ -78,6 +78,8 @@ body {
 
 .option:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+  transition: 0.5s ease;
 }
 
 #score-container {
@@ -104,11 +106,11 @@ body {
 }
 
 .correct {
-  background-color: green;
-  color: rgb(21, 180, 13);
+  background-color: rgb(50, 107, 50);
+  color: rgb(0, 0, 0);
 }
 
 .wrong {
-  background-color: red;
+  background-color: grey;
   color: rgb(224, 18, 18);
 }
