@@ -21,7 +21,10 @@
       </div>
       <div class="quiz-header">
         <h1>JavaScript Quiz</h1>
-        <div>Time: <span id="timer">0</span></div>
+        <div>
+          <i class="bi bi-stopwatch-fill"></i> Time:
+          <span id="timer">0</span>
+        </div>
       </div>
       <div id="quiz">
         <div id="question-container">
@@ -33,15 +36,14 @@
           <button class="option">Option 3</button>
           <button class="option">Option 4</button>
         </div>
-        <div>
-          <div id="score-container">
-            <p>Questions Remaining <span id="questionNumber"></span>/75</p>
-            <p>Answer: <span id="answer"></span></p>
-            <p>Score: <span id="score">0</span>/75</p>
-          </div>
-          <div><i class="bi bi-check-lg">something here</i></div>
+        <div id="score-container">
+          <p>Questions Remaining: <span id="questionNumber"></span>/75</p>
+          <p>Answer: <span id="answer"></span></p>
+          <p>Score Percentage: <span id="score">0</span></p>
         </div>
-        <button id="next-button">Next Question</button>
+        <button id="next-button">
+          Next Question <i class="bi bi-forward-fill"></i>
+        </button>
       </div>
     </div>
     <script type="module" src="quizQuestions.js"></script>

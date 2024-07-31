@@ -19,8 +19,8 @@ try {
   let timeLeft = TIME_START;
   let timing;
 
-  const time = new Date();
-  const hour = time.getHours();
+  const time = new Date(); // not used yet
+  const hour = time.getHours(); // not use yet
   let darkMode = false;
   let questionsRemainingArray = [];
 
@@ -31,8 +31,8 @@ try {
     javascriptQuizLogic();
     checkAnswer();
     nextButton();
-    darkModeToggle();
     timeRemaining();
+    darkModeToggle();
   }
 
   function resetGame() {
@@ -66,8 +66,13 @@ try {
   function javascriptQuizLogic() {
     timeLeft = 60;
     if (questionsRemainingArray.length === 0) {
+      if (score >= 52) {
+        answer.textContent = `You pass!`;
+      } else {
+        answer.textContent = `You did not pass..`;
+      }
       resetGame(); // reset everything
-      alert("Finish!");
+      // alert("Finish!");
       return;
     }
 
@@ -100,6 +105,7 @@ try {
 
   function pickedChoiceClick(e) {
     const choice = e.target;
+    disableButtons();
     //console.log(choice.textContent);
     if (choice.textContent == correctAnswer) {
       console.log("Correct!");
@@ -110,23 +116,36 @@ try {
       });
 
       score++;
-      scoreElement.textContent = score;
+      score = (score / 75) * 100; // get percentage
+      scoreElement.textContent = score.toFixed(2) + "%";
     } else {
       console.log("Wrong!");
-      answer.innerHTML = `Wrong! The right answer is ${correctAnswer}`;
+      answer.innerHTML = `Wrong! The answer is ${correctAnswer}`;
 
       choices.forEach((btn) => {
         btn.classList.add("wrong");
       });
     }
+
     setTimeout(() => {
       answer.textContent = "";
       javascriptQuizLogic();
-      choices.forEach((btn) => {
-        btn.classList.remove("correct");
-        btn.classList.remove("wrong");
-      });
-    }, 3000);
+      enableButtons();
+    }, 2500);
+  }
+
+  function disableButtons() {
+    choices.forEach((buttons) => {
+      buttons.disabled = true;
+    });
+  }
+
+  function enableButtons() {
+    choices.forEach((buttons) => {
+      buttons.disabled = false;
+      buttons.classList.remove("correct");
+      buttons.classList.remove("wrong");
+    });
   }
 
   // next question
