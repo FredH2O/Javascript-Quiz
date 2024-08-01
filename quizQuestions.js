@@ -512,7 +512,7 @@ const quizQuestions = [
   },
   {
     question: "Which operator is used to concatenate strings in JavaScript?",
-    choices: ["+", "&", "concat()", "+"],
+    choices: ["+", "&", "concat()", "++"],
     answer: 0,
   },
   {

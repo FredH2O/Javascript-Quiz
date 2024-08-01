@@ -47,7 +47,16 @@ try {
     timing = setInterval(function () {
       timeLeft--;
       timer.textContent = timeLeft;
-      if (timer.textContent == 0) {
+
+      if (timeLeft <= 10) {
+        timer.style.color = "red";
+      } else if (timeLeft <= 30) {
+        timer.style.color = "orange";
+      } else {
+        timer.style.color = "";
+      }
+
+      if (timeLeft === 0) {
         timeLeft = 60;
         javascriptQuizLogic();
       }
@@ -66,13 +75,20 @@ try {
   function javascriptQuizLogic() {
     timeLeft = 60;
     if (questionsRemainingArray.length === 0) {
-      if (score >= 52) {
-        answer.textContent = `You pass!`;
+      let finalScore = (score / quizQuestions.length) * 100; // get percentage
+      // scoreElement.textContent = finalScore.toFixed(2) + "%";
+      console.log(finalScore);
+
+      if (finalScore >= 70) {
+        answer.textContent = `You pass! Your grade is ${finalScore.toFixed(
+          2
+        )}% !`;
       } else {
-        answer.textContent = `You did not pass..`;
+        answer.textContent = `You didn't pass.. ${finalScore.toFixed(
+          2
+        )}%. Try again?!`;
       }
       resetGame(); // reset everything
-      // alert("Finish!");
       return;
     }
 
@@ -116,11 +132,10 @@ try {
       });
 
       score++;
-      score = (score / 75) * 100; // get percentage
-      scoreElement.textContent = score.toFixed(2) + "%";
+      scoreElement.textContent = score;
     } else {
       console.log("Wrong!");
-      answer.innerHTML = `Wrong! The answer is ${correctAnswer}`;
+      answer.innerHTML = `WRONG! The answer is <b><i>${correctAnswer}</i></b>`;
 
       choices.forEach((btn) => {
         btn.classList.add("wrong");
@@ -135,12 +150,14 @@ try {
   }
 
   function disableButtons() {
+    nextBtn.disabled = true;
     choices.forEach((buttons) => {
       buttons.disabled = true;
     });
   }
 
   function enableButtons() {
+    nextBtn.disabled = false;
     choices.forEach((buttons) => {
       buttons.disabled = false;
       buttons.classList.remove("correct");
@@ -151,7 +168,12 @@ try {
   // next question
   function nextButton() {
     nextBtn.addEventListener("click", () => {
+      nextBtn.disabled = true;
       javascriptQuizLogic();
+
+      setTimeout(() => {
+        nextBtn.disabled = false;
+      }, 2500);
     });
   }
 

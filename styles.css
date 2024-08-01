@@ -36,6 +36,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 100%;
+  height: 600px;
 }
 
 .quiz-header {
@@ -62,6 +63,11 @@ body {
 #options-container {
   display: flex;
   flex-direction: column;
+}
+
+.bi-check-lg {
+  color: green;
+  font-size: larger;
 }
 
 .option {
@@ -111,6 +117,6 @@ body {
 }
 
 .wrong {
-  background-color: grey;
-  color: rgb(224, 18, 18);
+  background-color: rgb(147, 27, 27);
+  color: rgb(0, 0, 0);
 }
