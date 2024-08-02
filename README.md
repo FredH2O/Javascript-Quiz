@@ -16,6 +16,7 @@ This is a simple quiz game built with HTML, CSS, and JavaScript. The game featur
 - **JavaScript:** Logic and functionality of the game.
 - **Lodash:** Utility library for JavaScript, used for various helper functions.
 - **Bootstrap Icons:** Icons used in the application, installed via npm.
+- **Confetti.js:** https://confetti.js.org/more.html
 
 ## Installation
 
