@@ -1,6 +1,3 @@
-Certainly! Here's a README.md for your JavaScript Quiz game:
-
-````markdown
 # JavaScript Quiz Game
 
 This is a simple quiz game built with HTML, CSS, and JavaScript. The game features multiple-choice questions and keeps track of the player's score. It also utilizes lodash for utility functions and Bootstrap Icons for a polished interface.
@@ -19,6 +16,7 @@ This is a simple quiz game built with HTML, CSS, and JavaScript. The game featur
 - **JavaScript:** Logic and functionality of the game.
 - **Lodash:** Utility library for JavaScript, used for various helper functions.
 - **Bootstrap Icons:** Icons used in the application, installed via npm.
+- **Confetti.js:** https://confetti.js.org/more.html
 
 ## Installation
 
@@ -34,6 +32,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone https://github.com/FredH2O/Javascript-Quiz.git
    ```
+
 ````
 
 2. Navigate to the project directory
@@ -73,3 +72,4 @@ Contributions are what make the open source community such an amazing place to l
 FredH2O - [GitHub Profile](https://github.com/FredH2O)
 
 Project Link: [https://github.com/FredH2O/Javascript-Quiz](https://github.com/FredH2O/Javascript-Quiz)
+````
