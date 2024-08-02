@@ -1,6 +1,6 @@
-//import _ from "lodash";
-import quizQuestions from "./quizQuestions.js";
 //try {
+import quizQuestions from "./quizQuestions.js";
+
 const TIME_START = 60;
 const ORANGE_TIME = 30;
 const RED_TIME = 10;
