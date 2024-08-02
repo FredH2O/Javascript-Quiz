@@ -29,19 +29,21 @@ To get a local copy up and running follow these simple steps.
 ### Installation Steps
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/FredH2O/Javascript-Quiz.git
-   ```
 
-````
+   ```git clone https://github.com/FredH2O/Javascript-Quiz.git
+
+   ```
 
 2. Navigate to the project directory
-   ```sh
-   cd Javascript-Quiz
+
+   ```cd Javascript-Quiz
+
    ```
+
 3. Install npm packages
-   ```sh
-   npm install
+
+   ```npm install
+
    ```
 
 ## Usage
@@ -72,4 +74,3 @@ Contributions are what make the open source community such an amazing place to l
 FredH2O - [GitHub Profile](https://github.com/FredH2O)
 
 Project Link: [https://github.com/FredH2O/Javascript-Quiz](https://github.com/FredH2O/Javascript-Quiz)
-````
